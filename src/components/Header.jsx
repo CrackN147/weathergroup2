@@ -1,9 +1,11 @@
 import { Search } from './Search';
 
-export const Header = () => {
+export const Header = (props) => {
   return (
     <header className="App-header">
-      <Search />
+      <Search
+        {...props}
+      />
     </header>
   )
 }

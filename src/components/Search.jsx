@@ -1,6 +1,9 @@
 import {useState, useEffect} from 'react';
 import { localData } from '../system/localData';
-export const Search = () => {
+export const Search = (props) => {
+  const {
+    changeCity
+  } = props;
   const [search, setSearch] = useState('');
   const [searchWord, setSearchWord] = useState('');
   const [searchResult, setSearchResult] = useState([]);
@@ -42,7 +45,12 @@ export const Search = () => {
             let itemArr = item.split('\t');
             console.log(item.split('\t'));
             return (
-              <p key={index}>
+              <p key={index}
+                onClick={() => {
+                  changeCity(itemArr[0]);
+                  setSearch('');
+                }}
+              >
                 <span><span>City</span> {itemArr[0]}</span>
                 <span><span>Lon</span> {itemArr[1]}</span>
                 <span><span>Lat</span> {itemArr[2]}</span>

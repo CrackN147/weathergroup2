@@ -1,21 +1,30 @@
 import { PropTypes } from "prop-types";
+import { config } from "../system/config";
 export const Card = (props) => {
-  console.log(props);
+  // console.log(props);
   const { 
     weather, 
     temp,
     humidity,
     speed,
+    onClick,
   } = props;
   return (
     <div className="card">
-      <div className="card__header">
-        <h1 className="card__title">
-          {weather[0].main}
-        </h1>
-        <p className="card__subtitle">
-          {weather[0].description}
-        </p>
+      <div className="card__header" 
+        onClick={onClick}
+      >
+        <div className="card__header__item">
+          <h1 className="card__title">
+            {weather[0].main}
+          </h1>
+          <p className="card__subtitle">
+            {weather[0].description}
+          </p>
+        </div>
+        <div className="card__icon">
+          <img src={`${config.iconUrl}${weather[0].icon}.png`} alt="icon"/>
+        </div>
       </div>
       <div className="card__body">
         <div className="card__body__item">

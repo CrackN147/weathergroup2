@@ -6,3 +6,9 @@ export const getWeather = async (query) => {
   );
   return data;
 }
+export const getCurrentWeather = async (query) => {
+  const { data } = await axios.get(
+    `${config.apiCurrentURL}?appid=${config.apiKey}&${query}`
+  );
+  return data;
+}
