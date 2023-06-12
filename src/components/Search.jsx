@@ -43,7 +43,7 @@ export const Search = (props) => {
         <div className="App-search__result">
           {searchResult.map((item, index) => {
             let itemArr = item.split('\t');
-            console.log(item.split('\t'));
+            // console.log(item.split('\t'));
             return (
               <p key={index}
                 onClick={() => {

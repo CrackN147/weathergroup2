@@ -1,4 +1,5 @@
 import { PropTypes } from "prop-types";
+import moment from "moment";
 import { config } from "../system/config";
 export const Card = (props) => {
   // console.log(props);
@@ -7,6 +8,7 @@ export const Card = (props) => {
     temp,
     humidity,
     speed,
+    dt,
     onClick,
   } = props;
   return (
@@ -27,6 +29,14 @@ export const Card = (props) => {
         </div>
       </div>
       <div className="card__body">
+        <div className="card__body__item">
+          <p className="card__body__item__title">
+            Date
+          </p>
+          <p className="card__body__item__value">
+          {moment.unix(dt).format('dddd, MM')}
+          </p>
+        </div>
         <div className="card__body__item">
           <p className="card__body__item__title">
             Temperature

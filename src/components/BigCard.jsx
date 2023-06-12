@@ -3,12 +3,10 @@ import { config } from '../system/config';
 export const BigCard = (props) => {
   const {
     weather,
-    temp,
     main,
     wind,
     dt
   } = props;
-  console.log(props);
   return (
     <div className="big-card">
       <div className="big-card__header">
@@ -28,7 +26,7 @@ export const BigCard = (props) => {
             Date
           </p>
           <p className="big-card__header__date__value">
-            {moment.unix(dt).format('DD MM YYYY')}
+            {moment.unix(dt).format('dddd, MM')}
           </p>
         </div>
       </div>
